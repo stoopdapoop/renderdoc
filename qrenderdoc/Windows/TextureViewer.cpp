@@ -1086,12 +1086,12 @@ void TextureViewer::UI_UpdateStatusText()
           pickedText += lit(", ");
         }
 
-        pickedText += tr("Stencil 0x%1").arg(Formatter::Format(uint8_t(stencil & 0xff), true));
-
         pickedTooltip = tr("Stencil: %1 / 0x%2 / 0b%3")
                             .arg(stencil, 3, 10, QLatin1Char(' '))
                             .arg(Formatter::Format(uint8_t(stencil & 0xff), true))
                             .arg(stencil, 8, 2, QLatin1Char('0'));
+
+        pickedText += pickedTooltip;
       }
     }
     else
